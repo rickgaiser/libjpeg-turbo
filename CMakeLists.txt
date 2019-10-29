@@ -361,7 +361,7 @@ if(MSVC)
   check_include_files("intrin.h" HAVE_INTRIN_H)
 endif()
 
-if(UNIX)
+if(1)
   # Check for headers
   check_include_files(locale.h HAVE_LOCALE_H)
   check_include_files(stddef.h HAVE_STDDEF_H)
@@ -416,7 +416,7 @@ if(UNIX)
   endif()
 
   if(CMAKE_CROSSCOMPILING)
-    set(__CHAR_UNSIGNED__ 0)
+    set(__CHAR_UNSIGNED__ 1)
   else()
     check_c_source_runs("int main(void) { return ((char) -1 < 0); }"
       __CHAR_UNSIGNED__)
